@@ -1,8 +1,8 @@
 version: '3.8'
 
 services:
-  web-socket-service-nest-api:
-    container_name: web-socket-service-nest-api
+  web-socket-service:
+    container_name: web-socket-service
     build:
       context: .
       dockerfile: Dockerfile
@@ -12,14 +12,14 @@ services:
       - /usr/src/app/node_modules
     command: npm run start:dev
     ports:
-      - 8085:8085
+      - 8081:8081
     networks:
-      - inova
+      - thingable
     restart: always
     env_file:
       - .docker.env
 
 networks:
-  inova:
+  thingable:
     external: true
-    name: inova
+    name: thingable
