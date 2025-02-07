@@ -1,12 +1,13 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 
-import { EventModule } from './event/event.module';
-import { CalculationModule } from './calculation/calculation.module';
-import { AlertModule } from './alert/alert.module';
+import { MachineModule } from './machine/machine.module';
 
 @Module({
-  imports: [EventModule, ConfigModule.forRoot({ isGlobal: true, envFilePath: '.env' }), EventModule, CalculationModule, AlertModule],
+  imports: [
+    ConfigModule.forRoot({ isGlobal: true, envFilePath: '.env' }),
+    MachineModule
+  ],
   providers: [],
 })
-export class AppModule {}
+export class AppModule { }
