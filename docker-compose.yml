@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  web-socket-service-nest-api:
+    container_name: web-socket-service-nest-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: builder
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    command: npm run start:dev
+    ports:
+      - 8085:8085
+    networks:
+      - inova
+    restart: always
+    env_file:
+      - .docker.env
+
+networks:
+  inova:
+    external: true
+    name: inova
