@@ -29,7 +29,7 @@ export class MachineGateway implements OnGatewayConnection, OnGatewayDisconnect 
   }
 
   public broadCastMessageCron(payload: any) {
-    console.log('payload', payload);
+    console.log('payload cron', payload);
 
     this.connectedClients.forEach(wsClient => {
       if (wsClient.readyState === WebSocket.OPEN) {
