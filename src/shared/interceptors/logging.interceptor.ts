@@ -24,12 +24,9 @@ export class LoggingInterceptor implements NestInterceptor {
         const time = Date.now() - now;
         this.logger.log(`Completed ${method} ${url} with status ${status} in ${time}ms`);
       }),
-      catchError((error) => {
+      catchError(error => {
         const time = Date.now() - now;
-        this.logger.error(
-          `Error in ${method} ${url} after ${time}ms - IP: ${ip}`,
-          error.stack,
-        );
+        this.logger.error(`Error in ${method} ${url} after ${time}ms - IP: ${ip}`, error.stack);
         return throwError(() => error);
       }),
     );
