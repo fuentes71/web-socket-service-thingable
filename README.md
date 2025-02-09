@@ -2,7 +2,6 @@
 
 <p align="center">
  <a href="#started">Começando</a> • 
- <a href="#routes">Endpoints da API</a> •
  <a href="#patterns">Padrões</a> •
 </p>
 
@@ -55,16 +54,8 @@ npm run install
 2 - Subir containers
 
 ```bash
-docker-compose up
+docker-compose up --build
 ```
-
----
-
-<h3 id="routes">📍 Endpoints da API</h3>
-
-A documentação dos endpoints da API pode ser encontrada após executar o projeto e acessar http://localhost:8080/control-service/api/docs.
-
----
 
 
 <h3 id="patterns"> 📝 Padrões do Projeto</h3>
